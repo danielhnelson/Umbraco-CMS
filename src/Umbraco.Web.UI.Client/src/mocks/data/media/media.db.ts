@@ -67,6 +67,7 @@ const createMockMediaMapper = (request: CreateMediaRequestModel): UmbMockMediaMo
 		isTrashed: false,
 		noAccess: false,
 		parent: request.parent,
+		presentationCustomization: [],
 		// We trust blindly that we send of the editorAlias to the create end point.
 		values: request.values as MediaValueResponseModel[],
 		variants: request.variants.map((variantRequest) => {
@@ -89,6 +90,7 @@ const detailResponseMapper = (model: UmbMockMediaModel): MediaResponseModel => {
 		id: model.id,
 		isTrashed: model.isTrashed,
 		urls: model.urls,
+		presentationCustomization: [],
 		values: model.values,
 		variants: model.variants,
 	};
@@ -119,6 +121,7 @@ const collectionMapper = (model: UmbMockMediaModel): MediaCollectionResponseMode
 			icon: model.mediaType.icon,
 		},
 		sortOrder: 0,
+		presentationCustomization: [],
 		values: model.values,
 		variants: model.variants,
 	};

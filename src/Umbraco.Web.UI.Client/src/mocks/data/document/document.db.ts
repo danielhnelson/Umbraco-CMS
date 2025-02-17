@@ -92,6 +92,7 @@ const createMockDocumentMapper = (request: CreateDocumentRequestModel): UmbMockD
 		isTrashed: false,
 		noAccess: false,
 		parent: request.parent,
+		presentationCustomization: [],
 		// TODO: Currently trusting we did send the editorAlias to the create end point:
 		values: request.values as DocumentValueResponseModel[],
 		variants: request.variants.map((variantRequest) => {
@@ -116,6 +117,7 @@ const detailResponseMapper = (model: UmbMockDocumentModel): DocumentResponseMode
 		isTrashed: model.isTrashed,
 		template: model.template,
 		urls: model.urls,
+		presentationCustomization: [],
 		values: model.values,
 		variants: model.variants,
 	};
@@ -148,6 +150,7 @@ const collectionMapper = (model: UmbMockDocumentModel): DocumentCollectionRespon
 		id: model.id,
 		sortOrder: 0,
 		updater: null,
+		presentationCustomization: [],
 		values: model.values,
 		variants: model.variants,
 	};

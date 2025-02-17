@@ -35,6 +35,7 @@ export const data: Array<UmbMockDocumentBlueprintModel> = [
 				updateDate: '2023-02-06T15:32:24.957009',
 			},
 		],
+		presentationCustomization: [],
 		values: [
 			{
 				editorAlias: 'Umbraco.TextBox',

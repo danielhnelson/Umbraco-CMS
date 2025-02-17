@@ -40,6 +40,7 @@ export const publishingHandlers = [
 			id: document.id,
 			isTrashed: document.isTrashed,
 			urls: document.urls,
+			presentationCustomization: document.presentationCustomization,
 			values: document.values,
 			variants: document.variants,
 			template: document.template,

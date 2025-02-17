@@ -18,6 +18,7 @@ export const data: Array<UmbMockMediaModel> = [
 			id: 'media-type-1-id',
 			icon: 'icon-picture',
 		},
+		presentationCustomization: [],
 		values: [
 			{
 				editorAlias: 'Umbraco.UploadField',
@@ -60,6 +61,7 @@ export const data: Array<UmbMockMediaModel> = [
 			id: 'media-type-1-id',
 			icon: 'icon-bug',
 		},
+		presentationCustomization: [],
 		values: [
 			{
 				editorAlias: 'Umbraco.TextBox',
@@ -91,6 +93,7 @@ export const data: Array<UmbMockMediaModel> = [
 			icon: 'icon-bug',
 			collection: { id: 'dt-collectionView' },
 		},
+		presentationCustomization: [],
 		values: [],
 		variants: [
 			{
@@ -116,6 +119,7 @@ export const data: Array<UmbMockMediaModel> = [
 			icon: 'icon-bug',
 			collection: { id: 'dt-collectionView' },
 		},
+		presentationCustomization: [],
 		values: [],
 		variants: [
 			{
@@ -140,6 +144,7 @@ export const data: Array<UmbMockMediaModel> = [
 			id: 'media-type-1-id',
 			icon: 'icon-bug',
 		},
+		presentationCustomization: [],
 		values: [
 			{
 				editorAlias: 'Umbraco.TextBox',
@@ -170,6 +175,7 @@ export const data: Array<UmbMockMediaModel> = [
 			id: 'media-type-1-id',
 			icon: 'icon-bug',
 		},
+		presentationCustomization: [],
 		values: [
 			{
 				editorAlias: 'Umbraco.TextBox',
@@ -200,6 +206,7 @@ export const data: Array<UmbMockMediaModel> = [
 			id: 'media-type-1-id',
 			icon: 'icon-bug',
 		},
+		presentationCustomization: [],
 		values: [
 			{
 				editorAlias: 'Umbraco.TextBox',
@@ -230,6 +237,7 @@ export const data: Array<UmbMockMediaModel> = [
 			id: 'media-type-1-id',
 			icon: 'icon-bug',
 		},
+		presentationCustomization: [],
 		values: [
 			{
 				editorAlias: 'Umbraco.TextBox',

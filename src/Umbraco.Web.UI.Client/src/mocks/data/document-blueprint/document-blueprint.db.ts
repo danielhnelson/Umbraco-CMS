@@ -68,6 +68,7 @@ const createMockDocumentBlueprintMapper = (request: CreateDocumentRequestModel):
 		isTrashed: false,
 		noAccess: false,
 		parent: request.parent,
+		presentationCustomization: [],
 		values: request.values as DocumentValueResponseModel[],
 		variants: request.variants.map((variantRequest) => {
 			return {
@@ -91,6 +92,7 @@ const detailResponseMapper = (model: UmbMockDocumentBlueprintModel): DocumentRes
 		isTrashed: model.isTrashed,
 		template: model.template,
 		urls: model.urls,
+		presentationCustomization: [],
 		values: model.values,
 		variants: model.variants,
 	};

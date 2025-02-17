@@ -47,6 +47,7 @@ const createDetailMockMapper = (request: CreateMemberRequestModel): UmbMockMembe
 			icon: memberType.icon,
 		},
 		username: request.username,
+		presentationCustomization: [],
 		values: request.values as MemberValueResponseModel[],
 		variants: request.variants.map((variantRequest) => {
 			return {
@@ -75,6 +76,7 @@ const detailResponseMapper = (item: UmbMockMemberModel): MemberResponseModel => 
 		lastPasswordChangeDate: item.lastPasswordChangeDate,
 		memberType: item.memberType,
 		username: item.username,
+		presentationCustomization: [],
 		values: item.values,
 		variants: item.variants,
 	};

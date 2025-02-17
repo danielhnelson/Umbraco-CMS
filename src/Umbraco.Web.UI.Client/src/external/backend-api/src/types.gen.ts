@@ -100,6 +100,22 @@ export type ConsentLevelPresentationModel = {
     description: string;
 };
 
+export type ContentPresentationCustomizationModel = {
+    type: ContentPresentationCustomizationTypeModel;
+    readonly culture?: (string) | null;
+    readonly segment?: (string) | null;
+    readonly id: string;
+    readonly readOnly: boolean;
+    readonly hidden: boolean;
+    readonly defaultValue?: unknown;
+};
+
+export enum ContentPresentationCustomizationTypeModel {
+    PROPERTY = 'Property',
+    GROUP = 'Group',
+    TAB = 'Tab'
+}
+
 export type CopyDataTypeRequestModel = {
     target?: ((ReferenceByIdModel) | null);
 };
@@ -565,6 +581,7 @@ export type DataTypeTreeItemResponseModel = {
 };
 
 export type DefaultReferenceResponseModel = {
+    $type: string;
     id: string;
     name?: (string) | null;
     type?: (string) | null;
@@ -621,6 +638,7 @@ export type DocumentBlueprintResponseModel = {
     values: Array<(DocumentValueResponseModel)>;
     variants: Array<(DocumentVariantResponseModel)>;
     id: string;
+    presentationCustomization: Array<(ContentPresentationCustomizationModel)>;
     documentType: (DocumentTypeReferenceResponseModel);
 };
 
@@ -637,6 +655,7 @@ export type DocumentCollectionResponseModel = {
     values: Array<(DocumentValueResponseModel)>;
     variants: Array<(DocumentVariantResponseModel)>;
     id: string;
+    presentationCustomization: Array<(ContentPresentationCustomizationModel)>;
     creator?: (string) | null;
     sortOrder: number;
     documentType: (DocumentTypeCollectionReferenceResponseModel);
@@ -686,6 +705,7 @@ export type DocumentRecycleBinItemResponseModel = {
 };
 
 export type DocumentReferenceResponseModel = {
+    $type: string;
     id: string;
     name?: (string) | null;
     published?: (boolean) | null;
@@ -696,6 +716,7 @@ export type DocumentResponseModel = {
     values: Array<(DocumentValueResponseModel)>;
     variants: Array<(DocumentVariantResponseModel)>;
     id: string;
+    presentationCustomization: Array<(ContentPresentationCustomizationModel)>;
     documentType: (DocumentTypeReferenceResponseModel);
     urls: Array<(DocumentUrlInfoModel)>;
     template?: ((ReferenceByIdModel) | null);
@@ -898,6 +919,7 @@ export type DocumentVersionResponseModel = {
     values: Array<(DocumentValueResponseModel)>;
     variants: Array<(DocumentVariantResponseModel)>;
     id: string;
+    presentationCustomization: Array<(ContentPresentationCustomizationModel)>;
     documentType: (DocumentTypeReferenceResponseModel);
     document?: ((ReferenceByIdModel) | null);
 };
@@ -1180,6 +1202,7 @@ export type MediaCollectionResponseModel = {
     values: Array<(MediaValueResponseModel)>;
     variants: Array<(MediaVariantResponseModel)>;
     id: string;
+    presentationCustomization: Array<(ContentPresentationCustomizationModel)>;
     creator?: (string) | null;
     sortOrder: number;
     mediaType: (MediaTypeCollectionReferenceResponseModel);
@@ -1213,6 +1236,7 @@ export type MediaRecycleBinItemResponseModel = {
 };
 
 export type MediaReferenceResponseModel = {
+    $type: string;
     id: string;
     name?: (string) | null;
     mediaType: (TrackedReferenceMediaTypeModel);
@@ -1222,6 +1246,7 @@ export type MediaResponseModel = {
     values: Array<(MediaValueResponseModel)>;
     variants: Array<(MediaVariantResponseModel)>;
     id: string;
+    presentationCustomization: Array<(ContentPresentationCustomizationModel)>;
     urls: Array<(MediaUrlInfoModel)>;
     isTrashed: boolean;
     mediaType: (MediaTypeReferenceResponseModel);
@@ -1405,6 +1430,7 @@ export type MemberResponseModel = {
     values: Array<(MemberValueResponseModel)>;
     variants: Array<(MemberVariantResponseModel)>;
     id: string;
+    presentationCustomization: Array<(ContentPresentationCustomizationModel)>;
     email: string;
     username: string;
     memberType: (MemberTypeReferenceResponseModel);
@@ -2053,6 +2079,7 @@ export type PublishedDocumentResponseModel = {
     values: Array<(DocumentValueResponseModel)>;
     variants: Array<(DocumentVariantResponseModel)>;
     id: string;
+    presentationCustomization: Array<(ContentPresentationCustomizationModel)>;
     documentType: (DocumentTypeReferenceResponseModel);
     urls: Array<(DocumentUrlInfoModel)>;
     template?: ((ReferenceByIdModel) | null);

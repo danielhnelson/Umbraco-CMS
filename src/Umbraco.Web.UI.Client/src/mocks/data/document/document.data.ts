@@ -38,6 +38,7 @@ export const data: Array<UmbMockDocumentModel> = [
 				updateDate: '2023-02-06T15:32:24.957009',
 			},
 		],
+		presentationCustomization: [],
 		values: [
 			{
 				editorAlias: 'Umbraco.TextBox',
@@ -67,6 +68,7 @@ export const data: Array<UmbMockDocumentModel> = [
 		noAccess: false,
 		isProtected: false,
 		isTrashed: false,
+		presentationCustomization: [],
 		values: [
 			{
 				editorAlias: 'Umbraco.RichText',
@@ -620,6 +622,7 @@ export const data: Array<UmbMockDocumentModel> = [
 		noAccess: false,
 		isProtected: false,
 		isTrashed: false,
+		presentationCustomization: [],
 		values: [
 			{
 				editorAlias: 'Umbraco.TextBox',
@@ -754,6 +757,7 @@ export const data: Array<UmbMockDocumentModel> = [
 		noAccess: false,
 		isProtected: false,
 		isTrashed: false,
+		presentationCustomization: [],
 		values: [
 			{
 				editorAlias: 'Umbraco.TextBox',
@@ -855,6 +859,7 @@ export const data: Array<UmbMockDocumentModel> = [
 				updateDate: '2023-02-06T15:32:24.957009',
 			},
 		],
+		presentationCustomization: [],
 		values: [
 			{
 				editorAlias: 'Umbraco.MultiNodeTreePicker',
@@ -902,6 +907,7 @@ export const data: Array<UmbMockDocumentModel> = [
 				updateDate: '2023-02-06T15:32:24.957009',
 			},
 		],
+		presentationCustomization: [],
 		values: [
 			{
 				alias: 'tiptap',
@@ -961,6 +967,7 @@ export const data: Array<UmbMockDocumentModel> = [
 		noAccess: false,
 		isProtected: false,
 		isTrashed: false,
+		presentationCustomization: [],
 		values: [
 			{
 				editorAlias: 'Umbraco.BlockList',
