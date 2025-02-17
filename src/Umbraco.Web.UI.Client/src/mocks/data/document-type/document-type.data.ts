@@ -816,6 +816,7 @@ export const data: Array<UmbMockDocumentTypeModel> = [
 		hasChildren: false,
 		parent: null,
 		isFolder: false,
+		presentationCustomization: [],
 		properties: [
 			{
 				id: '6',
@@ -894,6 +895,7 @@ export const data: Array<UmbMockDocumentTypeModel> = [
 		hasChildren: false,
 		parent: null,
 		isFolder: false,
+		presentationCustomization: [],
 		properties: [
 			{
 				id: '5b4ca208-134e-4865-b423-06e5e97adf3c',
@@ -1065,6 +1067,7 @@ export const data: Array<UmbMockDocumentTypeModel> = [
 		hasChildren: false,
 		parent: null,
 		isFolder: false,
+		presentationCustomization: [],
 		properties: [
 			{
 				id: '5e5f7456-c751-4846-9f2b-47965cc96ec6',
@@ -1119,6 +1122,7 @@ export const data: Array<UmbMockDocumentTypeModel> = [
 		hasChildren: false,
 		parent: null,
 		isFolder: false,
+		presentationCustomization: [],
 		properties: [
 			{
 				id: 'b92de6ac-1a22-4a45-a481-b6cae1cccbbf',
@@ -1220,6 +1224,7 @@ export const data: Array<UmbMockDocumentTypeModel> = [
 		hasChildren: false,
 		parent: null,
 		isFolder: false,
+		presentationCustomization: [],
 		properties: [
 			{
 				id: 'b92de6ac-1a22-4a45-a481-b6cae1cccbb0',
@@ -1284,6 +1289,7 @@ export const data: Array<UmbMockDocumentTypeModel> = [
 		hasChildren: false,
 		parent: null,
 		isFolder: false,
+		presentationCustomization: [],
 		properties: [
 			{
 				id: '1680d4d2-cda8-4ac2-affd-a69fc10382b1',
@@ -1341,6 +1347,7 @@ export const data: Array<UmbMockDocumentTypeModel> = [
 		hasChildren: false,
 		parent: null,
 		isFolder: false,
+		presentationCustomization: [],
 		properties: [
 			{
 				id: '82d4b050-b128-42fe-ac8e-d5586e533592',
@@ -1422,6 +1429,7 @@ export const data: Array<UmbMockDocumentTypeModel> = [
 			keepAllVersionsNewerThanDays: null,
 			keepLatestVersionPerDayForDays: null,
 		},
+		presentationCustomization: [],
 		properties: [],
 		containers: [],
 	},
@@ -1447,6 +1455,7 @@ export const data: Array<UmbMockDocumentTypeModel> = [
 			keepAllVersionsNewerThanDays: null,
 			keepLatestVersionPerDayForDays: null,
 		},
+		presentationCustomization: [],
 		properties: [
 			{
 				id: 'coffee-name-id',
@@ -1521,6 +1530,7 @@ export const data: Array<UmbMockDocumentTypeModel> = [
 			keepAllVersionsNewerThanDays: null,
 			keepLatestVersionPerDayForDays: null,
 		},
+		presentationCustomization: [],
 		properties: [
 			{
 				id: 'headline-id',
@@ -1575,6 +1585,7 @@ export const data: Array<UmbMockDocumentTypeModel> = [
 			keepAllVersionsNewerThanDays: null,
 			keepLatestVersionPerDayForDays: null,
 		},
+		presentationCustomization: [],
 		properties: [
 			{
 				id: 'block-alignment-id',
@@ -1629,6 +1640,7 @@ export const data: Array<UmbMockDocumentTypeModel> = [
 			keepAllVersionsNewerThanDays: null,
 			keepLatestVersionPerDayForDays: null,
 		},
+		presentationCustomization: [],
 		properties: [
 			{
 				id: 'image-id',
@@ -1683,6 +1695,7 @@ export const data: Array<UmbMockDocumentTypeModel> = [
 			keepAllVersionsNewerThanDays: null,
 			keepLatestVersionPerDayForDays: null,
 		},
+		presentationCustomization: [],
 		properties: [
 			{
 				id: 'rich-text-id',
@@ -1739,6 +1752,7 @@ export const data: Array<UmbMockDocumentTypeModel> = [
 			keepAllVersionsNewerThanDays: null,
 			keepLatestVersionPerDayForDays: null,
 		},
+		presentationCustomization: [],
 		properties: [],
 		containers: [],
 	},
@@ -1764,6 +1778,7 @@ export const data: Array<UmbMockDocumentTypeModel> = [
 			keepAllVersionsNewerThanDays: null,
 			keepLatestVersionPerDayForDays: null,
 		},
+		presentationCustomization: [],
 		properties: [],
 		containers: [],
 	},
@@ -1782,6 +1797,7 @@ export const data: Array<UmbMockDocumentTypeModel> = [
 		hasChildren: false,
 		parent: null,
 		isFolder: false,
+		presentationCustomization: [],
 		properties: [
 			{
 				id: '1dd0d4d2-cda8-4ac2-affd-a69fc10382b1',
@@ -1862,6 +1878,7 @@ Search for **dt-richTextEditorTinyMce** in the codebase to find the configuratio
 		hasChildren: false,
 		parent: null,
 		isFolder: false,
+		presentationCustomization: [],
 		properties: [
 			{
 				id: '18',

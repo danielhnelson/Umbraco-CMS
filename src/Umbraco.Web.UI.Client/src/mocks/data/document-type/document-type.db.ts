@@ -110,6 +110,7 @@ const documentTypeDetailMapper = (item: UmbMockDocumentTypeModel): DocumentTypeR
 		description: item.description,
 		alias: item.alias,
 		icon: item.icon,
+		presentationCustomization: item.presentationCustomization,
 		properties: item.properties,
 		containers: item.containers,
 		allowedAsRoot: item.allowedAsRoot,
