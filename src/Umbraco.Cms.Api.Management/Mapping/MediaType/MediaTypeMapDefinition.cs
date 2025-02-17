@@ -1,4 +1,4 @@
-﻿using Umbraco.Cms.Api.Management.Mapping.ContentType;
+using Umbraco.Cms.Api.Management.Mapping.ContentType;
 using Umbraco.Cms.Api.Management.ViewModels;
 using Umbraco.Cms.Api.Management.ViewModels.MediaType;
 using Umbraco.Cms.Core.Mapping;
@@ -21,7 +21,7 @@ public class MediaTypeMapDefinition : ContentTypeMapDefinition<IMediaType, Media
         mapper.Define<ISimpleContentType, MediaTypeCollectionReferenceResponseModel>((_, _) => new MediaTypeCollectionReferenceResponseModel(), Map);
     }
 
-    // Umbraco.Code.MapAll
+    // Umbraco.Code.MapAll -PresentationCustomization
     private void Map(IMediaType source, MediaTypeResponseModel target, MapperContext context)
     {
         target.Id = source.Key;

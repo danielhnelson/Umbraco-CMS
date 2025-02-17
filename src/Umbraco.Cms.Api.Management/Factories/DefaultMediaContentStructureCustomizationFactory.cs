@@ -7,6 +7,6 @@ namespace Umbraco.Cms.Api.Management.Factories;
 public class DefaultMediaContentStructureCustomizationFactory : IMediaPresentationCustomizationFactory
 {
     /// <inheritdoc/>
-    public Task<IEnumerable<ContentPresentationCustomization>> CreatePresentationCustomizationsAsync(IMedia content)
+    public Task<IEnumerable<ContentPresentationCustomization>> CreatePresentationCustomizationsAsync(IMediaType contentType)
         => Task.FromResult(Enumerable.Empty<ContentPresentationCustomization>());
 }

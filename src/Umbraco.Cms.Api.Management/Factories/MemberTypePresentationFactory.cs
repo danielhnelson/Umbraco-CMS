@@ -1,4 +1,4 @@
-﻿using Umbraco.Cms.Api.Management.ViewModels.MemberType;
+using Umbraco.Cms.Api.Management.ViewModels.MemberType;
 using Umbraco.Cms.Core.Mapping;
 using Umbraco.Cms.Core.Models;
 
@@ -7,11 +7,15 @@ namespace Umbraco.Cms.Api.Management.Factories;
 internal sealed class MemberTypePresentationFactory : IMemberTypePresentationFactory
 {
     private readonly IUmbracoMapper _umbracoMapper;
+    private readonly IMemberPresentationCustomizationFactory _memberPresentationCustomizationFactory;
 
-    public MemberTypePresentationFactory(IUmbracoMapper umbracoMapper)
-        => _umbracoMapper = umbracoMapper;
+    public MemberTypePresentationFactory(IUmbracoMapper umbracoMapper, IMemberPresentationCustomizationFactory memberPresentationCustomizationFactory)
+    {
+        _umbracoMapper = umbracoMapper;
+        _memberPresentationCustomizationFactory = memberPresentationCustomizationFactory;
+    }
 
-    public Task<MemberTypeResponseModel> CreateResponseModelAsync(IMemberType memberType)
+    public async Task<MemberTypeResponseModel> CreateResponseModelAsync(IMemberType memberType)
     {
         MemberTypeResponseModel model = _umbracoMapper.Map<MemberTypeResponseModel>(memberType)!;
 
@@ -23,6 +27,8 @@ internal sealed class MemberTypePresentationFactory : IMemberTypePresentationFac
             propertyType.Visibility.MemberCanView = memberType.MemberCanViewProperty(propertyType.Alias);
         }
 
-        return Task.FromResult(model);
+        model.PresentationCustomization = await _memberPresentationCustomizationFactory.CreatePresentationCustomizationsAsync(memberType);
+
+        return model;
     }
 }

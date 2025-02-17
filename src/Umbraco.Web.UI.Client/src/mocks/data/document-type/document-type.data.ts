@@ -25,6 +25,7 @@ export const data: Array<UmbMockDocumentTypeModel> = [
 		hasChildren: false,
 		parent: null,
 		isFolder: false,
+		presentationCustomization: [],
 		properties: [
 			{
 				id: '1680d4d2-cda8-4ac2-affd-a69fc10382b1',
@@ -80,6 +81,7 @@ export const data: Array<UmbMockDocumentTypeModel> = [
 		hasChildren: false,
 		parent: null,
 		isFolder: false,
+		presentationCustomization: [],
 		properties: [
 			{
 				id: '1',

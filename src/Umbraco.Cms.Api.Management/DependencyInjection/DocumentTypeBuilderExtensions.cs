@@ -1,4 +1,4 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection;
 using Umbraco.Cms.Api.Management.Factories;
 using Umbraco.Cms.Api.Management.Mapping.DocumentType;
 using Umbraco.Cms.Core.DependencyInjection;
@@ -11,6 +11,8 @@ internal static class DocumentTypeBuilderExtensions
     internal static IUmbracoBuilder AddDocumentTypes(this IUmbracoBuilder builder)
     {
         builder.Services.AddTransient<IDocumentTypeEditingPresentationFactory, DocumentTypeEditingPresentationFactory>();
+        builder.Services.AddTransient<IDocumentTypePresentationFactory, DocumentTypePresentationFactory>();
+        builder.Services.AddTransient<IDocumentPresentationCustomizationFactory, DefaultDocumentContentStructureCustomizationFactory>();
 
         builder.WithCollectionBuilder<MapDefinitionCollectionBuilder>().Add<DocumentTypeMapDefinition>();
         builder.WithCollectionBuilder<MapDefinitionCollectionBuilder>().Add<DocumentTypeCompositionMapDefinition>();

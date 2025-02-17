@@ -112,8 +112,7 @@ export type ContentPresentationCustomizationModel = {
 
 export enum ContentPresentationCustomizationTypeModel {
     PROPERTY = 'Property',
-    GROUP = 'Group',
-    TAB = 'Tab'
+    CONTAINER = 'Container'
 }
 
 export type CopyDataTypeRequestModel = {
@@ -638,7 +637,6 @@ export type DocumentBlueprintResponseModel = {
     values: Array<(DocumentValueResponseModel)>;
     variants: Array<(DocumentVariantResponseModel)>;
     id: string;
-    presentationCustomization: Array<(ContentPresentationCustomizationModel)>;
     documentType: (DocumentTypeReferenceResponseModel);
 };
 
@@ -655,7 +653,6 @@ export type DocumentCollectionResponseModel = {
     values: Array<(DocumentValueResponseModel)>;
     variants: Array<(DocumentVariantResponseModel)>;
     id: string;
-    presentationCustomization: Array<(ContentPresentationCustomizationModel)>;
     creator?: (string) | null;
     sortOrder: number;
     documentType: (DocumentTypeCollectionReferenceResponseModel);
@@ -716,7 +713,6 @@ export type DocumentResponseModel = {
     values: Array<(DocumentValueResponseModel)>;
     variants: Array<(DocumentVariantResponseModel)>;
     id: string;
-    presentationCustomization: Array<(ContentPresentationCustomizationModel)>;
     documentType: (DocumentTypeReferenceResponseModel);
     urls: Array<(DocumentUrlInfoModel)>;
     template?: ((ReferenceByIdModel) | null);
@@ -826,6 +822,7 @@ export type DocumentTypeResponseModel = {
     properties: Array<(DocumentTypePropertyTypeResponseModel)>;
     containers: Array<(DocumentTypePropertyTypeContainerResponseModel)>;
     id: string;
+    presentationCustomization: Array<(ContentPresentationCustomizationModel)>;
     allowedTemplates: Array<(ReferenceByIdModel)>;
     defaultTemplate?: ((ReferenceByIdModel) | null);
     cleanup: (DocumentTypeCleanupModel);
@@ -919,7 +916,6 @@ export type DocumentVersionResponseModel = {
     values: Array<(DocumentValueResponseModel)>;
     variants: Array<(DocumentVariantResponseModel)>;
     id: string;
-    presentationCustomization: Array<(ContentPresentationCustomizationModel)>;
     documentType: (DocumentTypeReferenceResponseModel);
     document?: ((ReferenceByIdModel) | null);
 };
@@ -1202,7 +1198,6 @@ export type MediaCollectionResponseModel = {
     values: Array<(MediaValueResponseModel)>;
     variants: Array<(MediaVariantResponseModel)>;
     id: string;
-    presentationCustomization: Array<(ContentPresentationCustomizationModel)>;
     creator?: (string) | null;
     sortOrder: number;
     mediaType: (MediaTypeCollectionReferenceResponseModel);
@@ -1246,7 +1241,6 @@ export type MediaResponseModel = {
     values: Array<(MediaValueResponseModel)>;
     variants: Array<(MediaVariantResponseModel)>;
     id: string;
-    presentationCustomization: Array<(ContentPresentationCustomizationModel)>;
     urls: Array<(MediaUrlInfoModel)>;
     isTrashed: boolean;
     mediaType: (MediaTypeReferenceResponseModel);
@@ -1337,6 +1331,7 @@ export type MediaTypeResponseModel = {
     properties: Array<(MediaTypePropertyTypeResponseModel)>;
     containers: Array<(MediaTypePropertyTypeContainerResponseModel)>;
     id: string;
+    presentationCustomization: Array<(ContentPresentationCustomizationModel)>;
     allowedMediaTypes: Array<(MediaTypeSortModel)>;
     compositions: Array<(MediaTypeCompositionModel)>;
     isDeletable: boolean;
@@ -1430,7 +1425,6 @@ export type MemberResponseModel = {
     values: Array<(MemberValueResponseModel)>;
     variants: Array<(MemberVariantResponseModel)>;
     id: string;
-    presentationCustomization: Array<(ContentPresentationCustomizationModel)>;
     email: string;
     username: string;
     memberType: (MemberTypeReferenceResponseModel);
@@ -1520,6 +1514,7 @@ export type MemberTypeResponseModel = {
     properties: Array<(MemberTypePropertyTypeResponseModel)>;
     containers: Array<(MemberTypePropertyTypeContainerResponseModel)>;
     id: string;
+    presentationCustomization: Array<(ContentPresentationCustomizationModel)>;
     compositions: Array<(MemberTypeCompositionModel)>;
 };
 
@@ -2079,7 +2074,6 @@ export type PublishedDocumentResponseModel = {
     values: Array<(DocumentValueResponseModel)>;
     variants: Array<(DocumentVariantResponseModel)>;
     id: string;
-    presentationCustomization: Array<(ContentPresentationCustomizationModel)>;
     documentType: (DocumentTypeReferenceResponseModel);
     urls: Array<(DocumentUrlInfoModel)>;
     template?: ((ReferenceByIdModel) | null);

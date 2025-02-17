@@ -34367,8 +34367,7 @@
       "ContentPresentationCustomizationTypeModel": {
         "enum": [
           "Property",
-          "Group",
-          "Tab"
+          "Container"
         ],
         "type": "string"
       },
@@ -36792,7 +36791,6 @@
         "required": [
           "documentType",
           "id",
-          "presentationCustomization",
           "values",
           "variants"
         ],
@@ -36821,16 +36819,6 @@
           "id": {
             "type": "string",
             "format": "uuid"
-          },
-          "presentationCustomization": {
-            "type": "array",
-            "items": {
-              "oneOf": [
-                {
-                  "$ref": "#/components/schemas/ContentPresentationCustomizationModel"
-                }
-              ]
-            }
           },
           "documentType": {
             "oneOf": [
@@ -36887,7 +36875,6 @@
         "required": [
           "documentType",
           "id",
-          "presentationCustomization",
           "sortOrder",
           "values",
           "variants"
@@ -36917,16 +36904,6 @@
           "id": {
             "type": "string",
             "format": "uuid"
-          },
-          "presentationCustomization": {
-            "type": "array",
-            "items": {
-              "oneOf": [
-                {
-                  "$ref": "#/components/schemas/ContentPresentationCustomizationModel"
-                }
-              ]
-            }
           },
           "creator": {
             "type": "string",
@@ -37182,7 +37159,6 @@
           "documentType",
           "id",
           "isTrashed",
-          "presentationCustomization",
           "urls",
           "values",
           "variants"
@@ -37212,16 +37188,6 @@
           "id": {
             "type": "string",
             "format": "uuid"
-          },
-          "presentationCustomization": {
-            "type": "array",
-            "items": {
-              "oneOf": [
-                {
-                  "$ref": "#/components/schemas/ContentPresentationCustomizationModel"
-                }
-              ]
-            }
           },
           "documentType": {
             "oneOf": [
@@ -37650,6 +37616,7 @@
           "id",
           "isElement",
           "name",
+          "presentationCustomization",
           "properties",
           "variesByCulture",
           "variesBySegment"
@@ -37715,6 +37682,16 @@
           "id": {
             "type": "string",
             "format": "uuid"
+          },
+          "presentationCustomization": {
+            "type": "array",
+            "items": {
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/ContentPresentationCustomizationModel"
+                }
+              ]
+            }
           },
           "allowedTemplates": {
             "type": "array",
@@ -38078,7 +38055,6 @@
         "required": [
           "documentType",
           "id",
-          "presentationCustomization",
           "values",
           "variants"
         ],
@@ -38107,16 +38083,6 @@
           "id": {
             "type": "string",
             "format": "uuid"
-          },
-          "presentationCustomization": {
-            "type": "array",
-            "items": {
-              "oneOf": [
-                {
-                  "$ref": "#/components/schemas/ContentPresentationCustomizationModel"
-                }
-              ]
-            }
           },
           "documentType": {
             "oneOf": [
@@ -39133,7 +39099,6 @@
         "required": [
           "id",
           "mediaType",
-          "presentationCustomization",
           "sortOrder",
           "values",
           "variants"
@@ -39163,16 +39128,6 @@
           "id": {
             "type": "string",
             "format": "uuid"
-          },
-          "presentationCustomization": {
-            "type": "array",
-            "items": {
-              "oneOf": [
-                {
-                  "$ref": "#/components/schemas/ContentPresentationCustomizationModel"
-                }
-              ]
-            }
           },
           "creator": {
             "type": "string",
@@ -39354,7 +39309,6 @@
           "id",
           "isTrashed",
           "mediaType",
-          "presentationCustomization",
           "urls",
           "values",
           "variants"
@@ -39384,16 +39338,6 @@
           "id": {
             "type": "string",
             "format": "uuid"
-          },
-          "presentationCustomization": {
-            "type": "array",
-            "items": {
-              "oneOf": [
-                {
-                  "$ref": "#/components/schemas/ContentPresentationCustomizationModel"
-                }
-              ]
-            }
           },
           "urls": {
             "type": "array",
@@ -39747,6 +39691,7 @@
           "isDeletable",
           "isElement",
           "name",
+          "presentationCustomization",
           "properties",
           "variesByCulture",
           "variesBySegment"
@@ -39812,6 +39757,16 @@
           "id": {
             "type": "string",
             "format": "uuid"
+          },
+          "presentationCustomization": {
+            "type": "array",
+            "items": {
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/ContentPresentationCustomizationModel"
+                }
+              ]
+            }
           },
           "allowedMediaTypes": {
             "type": "array",
@@ -40155,7 +40110,6 @@
           "isTwoFactorEnabled",
           "kind",
           "memberType",
-          "presentationCustomization",
           "username",
           "values",
           "variants"
@@ -40185,16 +40139,6 @@
           "id": {
             "type": "string",
             "format": "uuid"
-          },
-          "presentationCustomization": {
-            "type": "array",
-            "items": {
-              "oneOf": [
-                {
-                  "$ref": "#/components/schemas/ContentPresentationCustomizationModel"
-                }
-              ]
-            }
           },
           "email": {
             "type": "string"
@@ -40526,6 +40470,7 @@
           "id",
           "isElement",
           "name",
+          "presentationCustomization",
           "properties",
           "variesByCulture",
           "variesBySegment"
@@ -40591,6 +40536,16 @@
           "id": {
             "type": "string",
             "format": "uuid"
+          },
+          "presentationCustomization": {
+            "type": "array",
+            "items": {
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/ContentPresentationCustomizationModel"
+                }
+              ]
+            }
           },
           "compositions": {
             "type": "array",
@@ -42947,7 +42902,6 @@
           "documentType",
           "id",
           "isTrashed",
-          "presentationCustomization",
           "urls",
           "values",
           "variants"
@@ -42977,16 +42931,6 @@
           "id": {
             "type": "string",
             "format": "uuid"
-          },
-          "presentationCustomization": {
-            "type": "array",
-            "items": {
-              "oneOf": [
-                {
-                  "$ref": "#/components/schemas/ContentPresentationCustomizationModel"
-                }
-              ]
-            }
           },
           "documentType": {
             "oneOf": [

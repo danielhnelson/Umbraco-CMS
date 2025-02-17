@@ -22,7 +22,7 @@ public class DocumentTypeMapDefinition : ContentTypeMapDefinition<IContentType, 
         mapper.Define<IContent, DocumentTypeBlueprintItemResponseModel>((_, _) => new DocumentTypeBlueprintItemResponseModel(), Map);
     }
 
-    // Umbraco.Code.MapAll
+    // Umbraco.Code.MapAll -PresentationCustomization
     private void Map(IContentType source, DocumentTypeResponseModel target, MapperContext context)
     {
         target.Id = source.Key;

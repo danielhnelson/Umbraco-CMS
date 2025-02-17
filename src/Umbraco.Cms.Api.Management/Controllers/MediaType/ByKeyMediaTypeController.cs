@@ -1,7 +1,10 @@
-﻿using Asp.Versioning;
+using Asp.Versioning;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.DependencyInjection;
+using Umbraco.Cms.Api.Management.Factories;
 using Umbraco.Cms.Api.Management.ViewModels.MediaType;
+using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Cms.Core.Mapping;
 using Umbraco.Cms.Core.Models;
 using Umbraco.Cms.Core.Services;
@@ -13,12 +16,22 @@ namespace Umbraco.Cms.Api.Management.Controllers.MediaType;
 public class ByKeyMediaTypeController : MediaTypeControllerBase
 {
     private readonly IMediaTypeService _mediaTypeService;
-    private readonly IUmbracoMapper _umbracoMapper;
+    private readonly IMediaTypePresentationFactory _mediaTypePresentationFactory;
 
+    [Obsolete("Please use the constructor taking IMediaTypePresentationFactory. This constructor will be removed in Umbraco 17.")]
     public ByKeyMediaTypeController(IMediaTypeService mediaTypeService, IUmbracoMapper umbracoMapper)
+        : this(
+              mediaTypeService,
+              umbracoMapper,
+              StaticServiceProvider.Instance.GetRequiredService<IMediaTypePresentationFactory>())
+    {
+    }
+
+    [ActivatorUtilitiesConstructor]
+    public ByKeyMediaTypeController(IMediaTypeService mediaTypeService, IUmbracoMapper umbracoMapper, IMediaTypePresentationFactory mediaTypePresentationFactory)
     {
         _mediaTypeService = mediaTypeService;
-        _umbracoMapper = umbracoMapper;
+        _mediaTypePresentationFactory = mediaTypePresentationFactory;
     }
 
     [HttpGet("{id:guid}")]
@@ -33,7 +46,8 @@ public class ByKeyMediaTypeController : MediaTypeControllerBase
             return OperationStatusResult(ContentTypeOperationStatus.NotFound);
         }
 
-        MediaTypeResponseModel model = _umbracoMapper.Map<MediaTypeResponseModel>(mediaType)!;
+        MediaTypeResponseModel model = await _mediaTypePresentationFactory.CreateResponseModelAsync(mediaType);
+
         return await Task.FromResult(Ok(model));
     }
 }

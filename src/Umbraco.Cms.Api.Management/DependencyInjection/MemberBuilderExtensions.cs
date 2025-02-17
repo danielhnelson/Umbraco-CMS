@@ -12,7 +12,6 @@ internal static class MemberBuilderExtensions
     {
         builder.Services.AddSingleton<IMemberPresentationFactory, MemberPresentationFactory>();
         builder.Services.AddTransient<IMemberEditingPresentationFactory, MemberEditingPresentationFactory>();
-        builder.Services.AddTransient<IMemberPresentationCustomizationFactory, DefaultMemberContentStructureCustomizationFactory>();
 
         builder.WithCollectionBuilder<MapDefinitionCollectionBuilder>().Add<MemberMapDefinition>();
 

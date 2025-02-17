@@ -8,6 +8,4 @@ public abstract class ContentResponseModelBase<TValueResponseModelBase, TVariant
     where TVariantResponseModel : VariantResponseModelBase
 {
     public Guid Id { get; set; }
-
-    public IEnumerable<ContentPresentationCustomization> PresentationCustomization { get; set; } = Enumerable.Empty<ContentPresentationCustomization>();
 }

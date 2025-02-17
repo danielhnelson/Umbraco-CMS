@@ -1,4 +1,4 @@
-﻿using Umbraco.Cms.Api.Management.Mapping.ContentType;
+using Umbraco.Cms.Api.Management.Mapping.ContentType;
 using Umbraco.Cms.Api.Management.ViewModels.MemberType;
 using Umbraco.Cms.Core.Mapping;
 using Umbraco.Cms.Core.Models;
@@ -18,7 +18,7 @@ public class MemberTypeMapDefinition : ContentTypeMapDefinition<IMemberType, Mem
         mapper.Define<ISimpleContentType, MemberTypeReferenceResponseModel>((_, _) => new MemberTypeReferenceResponseModel(), Map);
     }
 
-    // Umbraco.Code.MapAll -Collection
+    // Umbraco.Code.MapAll -Collection -PresentationCustomization
     private void Map(IMemberType source, MemberTypeResponseModel target, MapperContext context)
     {
         target.Id = source.Key;

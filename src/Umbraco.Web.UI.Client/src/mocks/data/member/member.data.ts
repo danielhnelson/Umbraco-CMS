@@ -20,7 +20,6 @@ export const data: Array<UmbMockMemberModel> = [
 		lastPasswordChangeDate: null,
 		memberType: { id: 'member-type-1-id', icon: '' },
 		username: 'member1',
-		presentationCustomization: [],
 		values: [],
 		variants: [
 			{
@@ -46,7 +45,6 @@ export const data: Array<UmbMockMemberModel> = [
 		lastPasswordChangeDate: null,
 		memberType: { id: 'member-type-1-id', icon: '' },
 		username: 'member2',
-		presentationCustomization: [],
 		values: [],
 		variants: [
 			{
@@ -72,7 +70,6 @@ export const data: Array<UmbMockMemberModel> = [
 		lastPasswordChangeDate: null,
 		memberType: { id: 'member-type-1-id', icon: '' },
 		username: 'member3',
-		presentationCustomization: [],
 		values: [],
 		variants: [
 			{

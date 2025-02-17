@@ -1,4 +1,4 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection;
 using Umbraco.Cms.Api.Management.Factories;
 using Umbraco.Cms.Api.Management.Mapping.MemberType;
 using Umbraco.Cms.Core.DependencyInjection;
@@ -12,6 +12,7 @@ internal static class MemberTypeBuilderExtensions
     {
         builder.Services.AddTransient<IMemberTypePresentationFactory, MemberTypePresentationFactory>();
         builder.Services.AddTransient<IMemberTypeEditingPresentationFactory, MemberTypeEditingPresentationFactory>();
+        builder.Services.AddTransient<IMemberPresentationCustomizationFactory, DefaultMemberContentStructureCustomizationFactory>();
 
         builder.WithCollectionBuilder<MapDefinitionCollectionBuilder>().Add<MemberTypeMapDefinition>();
         builder.WithCollectionBuilder<MapDefinitionCollectionBuilder>().Add<MemberTypeCompositionMapDefinition>();

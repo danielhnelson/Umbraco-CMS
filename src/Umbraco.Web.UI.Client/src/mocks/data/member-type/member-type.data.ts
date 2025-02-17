@@ -17,6 +17,7 @@ export const data: Array<UmbMockMemberTypeModel> = [
 		description: 'Member type 1 description',
 		alias: 'memberType1',
 		icon: 'icon-bug',
+		presentationCustomization: [],
 		properties: [
 			{
 				id: '1680d4d2-cda8-4ac2-affd-a69fc10382b1',

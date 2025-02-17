@@ -46,7 +46,7 @@ public class ContentPresentationCustomization
     public object? DefaultValue { get; private set; }
 
     /// <summary>
-    /// Creates a <see cref="ContentPresentationCustomization"/> based on a property type (tab).
+    /// Creates a <see cref="ContentPresentationCustomization"/> based on a property container (tab or group).
     /// </summary>
     /// <param name="id">The property type Id.</param>
     /// <param name="culture">The culture. Null value indicates all or for invariant content.</param>
@@ -54,7 +54,7 @@ public class ContentPresentationCustomization
     /// <param name="readOnly">Whether all properties within the tab should be read-only.</param>
     /// <param name="hidden">Whether all properties within the tab should be hidden.</param>
     /// <returns></returns>
-    public static ContentPresentationCustomization CreatePropertyTabCustomization(
+    public static ContentPresentationCustomization CreatePropertyContainerCustomization(
         Guid id,
         string? culture = null,
         string? segment = null,
@@ -62,32 +62,7 @@ public class ContentPresentationCustomization
         bool? hidden = false)
         => new()
         {
-            Type = ContentPresentationCustomizationType.Tab,
-            Culture = culture,
-            Segment = segment,
-            Id = id,
-            ReadOnly = readOnly ?? false,
-            Hidden = hidden ?? false,
-        };
-
-    /// <summary>
-    /// Creates a <see cref="ContentPresentationCustomization"/> based on a property group.
-    /// </summary>
-    /// <param name="id">The property type Id.</param>
-    /// <param name="culture">The culture. Null value indicates all or for invariant content.</param>
-    /// <param name="segment">The segment.</param>
-    /// <param name="readOnly">Whether all properties within the group should be read-only.</param>
-    /// <param name="hidden">Whether all properties within the group should be hidden.</param>
-    /// <returns></returns>
-    public static ContentPresentationCustomization CreatePropertyGroupCustomization(
-        Guid id,
-        string? culture = null,
-        string? segment = null,
-        bool? readOnly = false,
-        bool? hidden = false)
-        => new()
-        {
-            Type = ContentPresentationCustomizationType.Group,
+            Type = ContentPresentationCustomizationType.Container,
             Culture = culture,
             Segment = segment,
             Id = id,

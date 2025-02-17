@@ -4,8 +4,8 @@ using Umbraco.Cms.Core.Models;
 namespace Umbraco.Cms.Api.Management.Factories;
 
 /// <summary>
-/// Factory for creating a collection of <see cref="ContentPresentationCustomization"/> rules for rendering a document for editing.
+/// Factory for creating <see cref="ContentPresentationCustomization"/> collections for document types.
 /// </summary>
-public interface IDocumentPresentationCustomizationFactory : IContentPresentationCustomizationFactory<IContent>
+public interface IDocumentPresentationCustomizationFactory : IContentPresentationCustomizationFactory<IContentType>
 {
 }

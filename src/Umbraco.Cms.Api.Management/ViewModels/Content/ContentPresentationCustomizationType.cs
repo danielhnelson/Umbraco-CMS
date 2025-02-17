@@ -1,4 +1,4 @@
-﻿namespace Umbraco.Cms.Api.Management.ViewModels.Content;
+namespace Umbraco.Cms.Api.Management.ViewModels.Content;
 
 /// <summary>
 /// Defines the types of content presetnation structure available for customization.
@@ -11,12 +11,7 @@ public enum ContentPresentationCustomizationType
     Property,
 
     /// <summary>
-    /// Customization for a property group.
+    /// Customization for a property container (tab or group).
     /// </summary>
-    Group,
-
-    /// <summary>
-    /// Customization for a property type (tab).
-    /// </summary>
-    Tab,
+    Container,
 }

@@ -7,6 +7,6 @@ namespace Umbraco.Cms.Api.Management.Factories;
 public class DefaultDocumentContentStructureCustomizationFactory : IDocumentPresentationCustomizationFactory
 {
     /// <inheritdoc/>
-    public Task<IEnumerable<ContentPresentationCustomization>> CreatePresentationCustomizationsAsync(IContent content)
+    public Task<IEnumerable<ContentPresentationCustomization>> CreatePresentationCustomizationsAsync(IContentType contentType)
         => Task.FromResult(Enumerable.Empty<ContentPresentationCustomization>());
 }

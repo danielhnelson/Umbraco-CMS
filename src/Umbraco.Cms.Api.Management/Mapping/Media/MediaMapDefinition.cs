@@ -24,7 +24,7 @@ public class MediaMapDefinition : ContentMapDefinition<IMedia, MediaValueRespons
         mapper.Define<IMedia, MediaCollectionResponseModel>((_, _) => new MediaCollectionResponseModel(), Map);
     }
 
-    // Umbraco.Code.MapAll -Urls -PresentationCustomization
+    // Umbraco.Code.MapAll -Urls
     private void Map(IMedia source, MediaResponseModel target, MapperContext context)
     {
         target.Id = source.Key;
@@ -34,7 +34,7 @@ public class MediaMapDefinition : ContentMapDefinition<IMedia, MediaValueRespons
         target.IsTrashed = source.Trashed;
     }
 
-    // Umbraco.Code.MapAll -PresentationCustomization
+    // Umbraco.Code.MapAll
     private void Map(IMedia source, MediaCollectionResponseModel target, MapperContext context)
     {
         target.Id = source.Key;

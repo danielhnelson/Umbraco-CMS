@@ -16,18 +16,15 @@ internal sealed class MediaPresentationFactory : IMediaPresentationFactory
     private readonly IUmbracoMapper _umbracoMapper;
     private readonly IMediaUrlFactory _mediaUrlFactory;
     private readonly IIdKeyMap _idKeyMap;
-    private readonly IMediaPresentationCustomizationFactory _mediaPresentationCustomizationFactory;
 
     public MediaPresentationFactory(
         IUmbracoMapper umbracoMapper,
         IMediaUrlFactory mediaUrlFactory,
-        IIdKeyMap idKeyMap,
-        IMediaPresentationCustomizationFactory mediaPresentationCustomizationFactory)
+        IIdKeyMap idKeyMap)
     {
         _umbracoMapper = umbracoMapper;
         _mediaUrlFactory = mediaUrlFactory;
         _idKeyMap = idKeyMap;
-        _mediaPresentationCustomizationFactory = mediaPresentationCustomizationFactory;
     }
 
     [Obsolete("Use CreateResponseModelAsync instead. This method will be removed in Umbraco 17.")]
@@ -38,8 +35,6 @@ internal sealed class MediaPresentationFactory : IMediaPresentationFactory
         MediaResponseModel responseModel = _umbracoMapper.Map<MediaResponseModel>(media)!;
 
         responseModel.Urls = _mediaUrlFactory.CreateUrls(media);
-
-        responseModel.PresentationCustomization = await _mediaPresentationCustomizationFactory.CreatePresentationCustomizationsAsync(media);
 
         return responseModel;
     }

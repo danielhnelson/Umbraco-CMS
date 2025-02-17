@@ -7,6 +7,6 @@ namespace Umbraco.Cms.Api.Management.Factories;
 public class DefaultMemberContentStructureCustomizationFactory : IMemberPresentationCustomizationFactory
 {
     /// <inheritdoc/>
-    public Task<IEnumerable<ContentPresentationCustomization>> CreatePresentationCustomizationsAsync(IMember content)
+    public Task<IEnumerable<ContentPresentationCustomization>> CreatePresentationCustomizationsAsync(IMemberType contentType)
         => Task.FromResult(Enumerable.Empty<ContentPresentationCustomization>());
 }

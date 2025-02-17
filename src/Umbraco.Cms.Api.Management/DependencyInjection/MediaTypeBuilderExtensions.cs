@@ -1,4 +1,4 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection;
 using Umbraco.Cms.Api.Management.Factories;
 using Umbraco.Cms.Api.Management.Mapping.MediaType;
 using Umbraco.Cms.Core.DependencyInjection;
@@ -11,6 +11,8 @@ internal static class MediaTypeBuilderExtensions
     internal static IUmbracoBuilder AddMediaTypes(this IUmbracoBuilder builder)
     {
         builder.Services.AddTransient<IMediaTypeEditingPresentationFactory, MediaTypeEditingPresentationFactory>();
+        builder.Services.AddTransient<IMediaTypePresentationFactory, MediaTypePresentationFactory>();
+        builder.Services.AddTransient<IMediaPresentationCustomizationFactory, DefaultMediaContentStructureCustomizationFactory>();
 
         builder.WithCollectionBuilder<MapDefinitionCollectionBuilder>().Add<MediaTypeMapDefinition>();
         builder.WithCollectionBuilder<MapDefinitionCollectionBuilder>().Add<MediaTypeCompositionMapDefinition>();

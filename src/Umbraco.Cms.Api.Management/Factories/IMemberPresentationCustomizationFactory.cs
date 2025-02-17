@@ -4,8 +4,8 @@ using Umbraco.Cms.Core.Models;
 namespace Umbraco.Cms.Api.Management.Factories;
 
 /// <summary>
-/// Factory for creating a collection of <see cref="ContentPresentationCustomization"/> rules for rendering a member for editing.
+/// Factory for creating <see cref="ContentPresentationCustomization"/> collections for member types.
 /// </summary>
-public interface IMemberPresentationCustomizationFactory : IContentPresentationCustomizationFactory<IMember>
+public interface IMemberPresentationCustomizationFactory : IContentPresentationCustomizationFactory<IMemberType>
 {
 }

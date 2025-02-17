@@ -1,4 +1,6 @@
-﻿namespace Umbraco.Cms.Api.Management.ViewModels.ContentType;
+using Umbraco.Cms.Api.Management.ViewModels.Content;
+
+namespace Umbraco.Cms.Api.Management.ViewModels.ContentType;
 
 public abstract class ContentTypeResponseModelBase<TPropertyType, TPropertyTypeContainer>
     : ContentTypeModelBase<TPropertyType, TPropertyTypeContainer>
@@ -6,4 +8,6 @@ public abstract class ContentTypeResponseModelBase<TPropertyType, TPropertyTypeC
     where TPropertyTypeContainer : PropertyTypeContainerModelBase
 {
     public Guid Id { get; set; }
+
+    public IEnumerable<ContentPresentationCustomization> PresentationCustomization { get; set; } = Enumerable.Empty<ContentPresentationCustomization>();
 }
