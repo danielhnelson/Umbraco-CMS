@@ -1,4 +1,4 @@
-﻿using Umbraco.Cms.Core.Models.ContentEditing;
+using Umbraco.Cms.Core.Models.ContentEditing;
 
 namespace Umbraco.Cms.Api.Management.ViewModels.Content;
 
@@ -8,4 +8,6 @@ public abstract class ContentResponseModelBase<TValueResponseModelBase, TVariant
     where TVariantResponseModel : VariantResponseModelBase
 {
     public Guid Id { get; set; }
+
+    public IEnumerable<ContentPresentationCustomization> PresentationCustomization { get; set; } = Enumerable.Empty<ContentPresentationCustomization>();
 }

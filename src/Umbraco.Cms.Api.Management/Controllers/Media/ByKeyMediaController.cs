@@ -1,4 +1,4 @@
-﻿using Asp.Versioning;
+using Asp.Versioning;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -52,7 +52,7 @@ public class ByKeyMediaController : MediaControllerBase
             return MediaNotFound();
         }
 
-        MediaResponseModel model = _mediaPresentationFactory.CreateResponseModel(media);
+        MediaResponseModel model = await _mediaPresentationFactory.CreateResponseModelAsync(media);
         return Ok(model);
     }
 }

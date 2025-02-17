@@ -34322,6 +34322,56 @@
         },
         "additionalProperties": false
       },
+      "ContentPresentationCustomizationModel": {
+        "required": [
+          "hidden",
+          "id",
+          "readOnly",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/ContentPresentationCustomizationTypeModel"
+          },
+          "culture": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "segment": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "readOnly": true
+          },
+          "readOnly": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "hidden": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "defaultValue": {
+            "nullable": true,
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ContentPresentationCustomizationTypeModel": {
+        "enum": [
+          "Property",
+          "Group",
+          "Tab"
+        ],
+        "type": "string"
+      },
       "CopyDataTypeRequestModel": {
         "type": "object",
         "properties": {
@@ -36742,6 +36792,7 @@
         "required": [
           "documentType",
           "id",
+          "presentationCustomization",
           "values",
           "variants"
         ],
@@ -36770,6 +36821,16 @@
           "id": {
             "type": "string",
             "format": "uuid"
+          },
+          "presentationCustomization": {
+            "type": "array",
+            "items": {
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/ContentPresentationCustomizationModel"
+                }
+              ]
+            }
           },
           "documentType": {
             "oneOf": [
@@ -36826,6 +36887,7 @@
         "required": [
           "documentType",
           "id",
+          "presentationCustomization",
           "sortOrder",
           "values",
           "variants"
@@ -36855,6 +36917,16 @@
           "id": {
             "type": "string",
             "format": "uuid"
+          },
+          "presentationCustomization": {
+            "type": "array",
+            "items": {
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/ContentPresentationCustomizationModel"
+                }
+              ]
+            }
           },
           "creator": {
             "type": "string",
@@ -37110,6 +37182,7 @@
           "documentType",
           "id",
           "isTrashed",
+          "presentationCustomization",
           "urls",
           "values",
           "variants"
@@ -37139,6 +37212,16 @@
           "id": {
             "type": "string",
             "format": "uuid"
+          },
+          "presentationCustomization": {
+            "type": "array",
+            "items": {
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/ContentPresentationCustomizationModel"
+                }
+              ]
+            }
           },
           "documentType": {
             "oneOf": [
@@ -37995,6 +38078,7 @@
         "required": [
           "documentType",
           "id",
+          "presentationCustomization",
           "values",
           "variants"
         ],
@@ -38023,6 +38107,16 @@
           "id": {
             "type": "string",
             "format": "uuid"
+          },
+          "presentationCustomization": {
+            "type": "array",
+            "items": {
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/ContentPresentationCustomizationModel"
+                }
+              ]
+            }
           },
           "documentType": {
             "oneOf": [
@@ -39039,6 +39133,7 @@
         "required": [
           "id",
           "mediaType",
+          "presentationCustomization",
           "sortOrder",
           "values",
           "variants"
@@ -39068,6 +39163,16 @@
           "id": {
             "type": "string",
             "format": "uuid"
+          },
+          "presentationCustomization": {
+            "type": "array",
+            "items": {
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/ContentPresentationCustomizationModel"
+                }
+              ]
+            }
           },
           "creator": {
             "type": "string",
@@ -39249,6 +39354,7 @@
           "id",
           "isTrashed",
           "mediaType",
+          "presentationCustomization",
           "urls",
           "values",
           "variants"
@@ -39278,6 +39384,16 @@
           "id": {
             "type": "string",
             "format": "uuid"
+          },
+          "presentationCustomization": {
+            "type": "array",
+            "items": {
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/ContentPresentationCustomizationModel"
+                }
+              ]
+            }
           },
           "urls": {
             "type": "array",
@@ -40039,6 +40155,7 @@
           "isTwoFactorEnabled",
           "kind",
           "memberType",
+          "presentationCustomization",
           "username",
           "values",
           "variants"
@@ -40068,6 +40185,16 @@
           "id": {
             "type": "string",
             "format": "uuid"
+          },
+          "presentationCustomization": {
+            "type": "array",
+            "items": {
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/ContentPresentationCustomizationModel"
+                }
+              ]
+            }
           },
           "email": {
             "type": "string"
@@ -42820,6 +42947,7 @@
           "documentType",
           "id",
           "isTrashed",
+          "presentationCustomization",
           "urls",
           "values",
           "variants"
@@ -42849,6 +42977,16 @@
           "id": {
             "type": "string",
             "format": "uuid"
+          },
+          "presentationCustomization": {
+            "type": "array",
+            "items": {
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/ContentPresentationCustomizationModel"
+                }
+              ]
+            }
           },
           "documentType": {
             "oneOf": [

@@ -1,4 +1,4 @@
-﻿using Microsoft.Extensions.Options;
+using Microsoft.Extensions.Options;
 using Umbraco.Cms.Api.Management.ViewModels.Content;
 using Umbraco.Cms.Api.Management.ViewModels.Member;
 using Umbraco.Cms.Api.Management.ViewModels.Member.Item;
@@ -11,6 +11,7 @@ using Umbraco.Cms.Core.Models.Entities;
 using Umbraco.Cms.Core.Models.Membership;
 using Umbraco.Cms.Core.Services;
 using Umbraco.Extensions;
+using static Umbraco.Cms.Core.Constants.Conventions;
 
 namespace Umbraco.Cms.Api.Management.Factories;
 
@@ -22,6 +23,8 @@ internal sealed class MemberPresentationFactory : IMemberPresentationFactory
     private readonly ITwoFactorLoginService _twoFactorLoginService;
     private readonly IMemberGroupService _memberGroupService;
     private readonly DeliveryApiSettings _deliveryApiSettings;
+    private readonly IMemberPresentationCustomizationFactory _memberPresentationCustomizationFactory;
+
     private IEnumerable<Guid>? _clientCredentialsMemberKeys;
 
     public MemberPresentationFactory(
@@ -30,7 +33,8 @@ internal sealed class MemberPresentationFactory : IMemberPresentationFactory
         IMemberTypeService memberTypeService,
         ITwoFactorLoginService twoFactorLoginService,
         IMemberGroupService memberGroupService,
-        IOptions<DeliveryApiSettings> deliveryApiSettings)
+        IOptions<DeliveryApiSettings> deliveryApiSettings,
+        IMemberPresentationCustomizationFactory memberPresentationCustomizationFactory)
     {
         _umbracoMapper = umbracoMapper;
         _memberService = memberService;
@@ -38,6 +42,7 @@ internal sealed class MemberPresentationFactory : IMemberPresentationFactory
         _twoFactorLoginService = twoFactorLoginService;
         _memberGroupService = memberGroupService;
         _deliveryApiSettings = deliveryApiSettings.Value;
+        _memberPresentationCustomizationFactory = memberPresentationCustomizationFactory;
     }
 
     public async Task<MemberResponseModel> CreateResponseModelAsync(IMember member, IUser currentUser)
@@ -50,6 +55,9 @@ internal sealed class MemberPresentationFactory : IMemberPresentationFactory
 
         // Get the member groups per role, so we can return the group keys
         responseModel.Groups = roles.Select(x => _memberGroupService.GetByName(x)).WhereNotNull().Select(x => x.Key).ToArray();
+
+        responseModel.PresentationCustomization = await _memberPresentationCustomizationFactory.CreatePresentationCustomizationsAsync(member);
+
         return currentUser.HasAccessToSensitiveData()
             ? responseModel
             : await RemoveSensitiveDataAsync(member, responseModel);

@@ -1,4 +1,4 @@
-﻿using Umbraco.Cms.Api.Management.ViewModels;
+using Umbraco.Cms.Api.Management.ViewModels;
 using Umbraco.Cms.Api.Management.ViewModels.Content;
 using Umbraco.Cms.Api.Management.ViewModels.Media;
 using Umbraco.Cms.Api.Management.ViewModels.Media.Item;
@@ -16,22 +16,30 @@ internal sealed class MediaPresentationFactory : IMediaPresentationFactory
     private readonly IUmbracoMapper _umbracoMapper;
     private readonly IMediaUrlFactory _mediaUrlFactory;
     private readonly IIdKeyMap _idKeyMap;
+    private readonly IMediaPresentationCustomizationFactory _mediaPresentationCustomizationFactory;
 
     public MediaPresentationFactory(
         IUmbracoMapper umbracoMapper,
         IMediaUrlFactory mediaUrlFactory,
-        IIdKeyMap idKeyMap)
+        IIdKeyMap idKeyMap,
+        IMediaPresentationCustomizationFactory mediaPresentationCustomizationFactory)
     {
         _umbracoMapper = umbracoMapper;
         _mediaUrlFactory = mediaUrlFactory;
         _idKeyMap = idKeyMap;
+        _mediaPresentationCustomizationFactory = mediaPresentationCustomizationFactory;
     }
 
-    public MediaResponseModel CreateResponseModel(IMedia media)
+    [Obsolete("Use CreateResponseModelAsync instead. This method will be removed in Umbraco 17.")]
+    public MediaResponseModel CreateResponseModel(IMedia media) => CreateResponseModelAsync(media).GetAwaiter().GetResult();
+
+    public async Task<MediaResponseModel> CreateResponseModelAsync(IMedia media)
     {
         MediaResponseModel responseModel = _umbracoMapper.Map<MediaResponseModel>(media)!;
 
         responseModel.Urls = _mediaUrlFactory.CreateUrls(media);
+
+        responseModel.PresentationCustomization = await _mediaPresentationCustomizationFactory.CreatePresentationCustomizationsAsync(media);
 
         return responseModel;
     }

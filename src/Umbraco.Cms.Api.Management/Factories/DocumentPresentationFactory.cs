@@ -23,6 +23,7 @@ internal sealed class DocumentPresentationFactory : IDocumentPresentationFactory
     private readonly IPublicAccessService _publicAccessService;
     private readonly TimeProvider _timeProvider;
     private readonly IIdKeyMap _idKeyMap;
+    private readonly IDocumentPresentationCustomizationFactory _documentPresentationCustomizationFactory;
 
     public DocumentPresentationFactory(
         IUmbracoMapper umbracoMapper,
@@ -30,7 +31,8 @@ internal sealed class DocumentPresentationFactory : IDocumentPresentationFactory
         ITemplateService templateService,
         IPublicAccessService publicAccessService,
         TimeProvider timeProvider,
-        IIdKeyMap idKeyMap)
+        IIdKeyMap idKeyMap,
+        IDocumentPresentationCustomizationFactory documentPresentationCustomizationFactory)
     {
         _umbracoMapper = umbracoMapper;
         _documentUrlFactory = documentUrlFactory;
@@ -38,6 +40,7 @@ internal sealed class DocumentPresentationFactory : IDocumentPresentationFactory
         _publicAccessService = publicAccessService;
         _timeProvider = timeProvider;
         _idKeyMap = idKeyMap;
+        _documentPresentationCustomizationFactory = documentPresentationCustomizationFactory;
     }
 
     [Obsolete("Schedule for removal in v17")]
@@ -89,6 +92,8 @@ internal sealed class DocumentPresentationFactory : IDocumentPresentationFactory
         responseModel.Template = templateKey.HasValue
             ? new ReferenceByIdModel { Id = templateKey.Value }
             : null;
+
+        responseModel.PresentationCustomization = await _documentPresentationCustomizationFactory.CreatePresentationCustomizationsAsync(content);
 
         return responseModel;
     }
